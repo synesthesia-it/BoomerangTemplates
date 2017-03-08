@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ImplicitExtraTemplateFiles</key>
+	<dict>
+		<key>___FILEBASENAME___sViewModel</key>
+		<string>___FILEBASENAME___sViewModel.swift</string>
+		<key>___FILEBASENAME___ItemViewModel</key>
+		<string>___FILEBASENAME___ItemViewModel.swift</string>
+		<key>___FILEBASENAME___sViewController</key>
+		<string>___FILEBASENAME___sViewController.swift</string>
+		<key>___FILEBASENAME___ItemCollectionViewCell.xib</key>
+		<string>___FILEBASENAME___ItemCollectionViewCell.xib</string>
+		<key>___FILEBASENAME___ItemCollectionViewCell.swift</key>
+		<string>___FILEBASENAME___ItemCollectionViewCell.swift</string>
+	</dict>
+	<key>Kind</key>
+	<string>Xcode.IDEFoundation.TextSubstitutionFileTemplateKind</string>
+	<key>Description</key>
+	<string>An empty Swift file.</string>
+	<key>Summary</key>
+	<string>An empty Swift file</string>
+	<key>SortOrder</key>
+	<string>30</string>
+	<key>AllowedTypes</key>
+	<array>
+		<string>public.swift-source</string>
+	</array>
+	<key>DefaultCompletionName</key>
+	<string>File</string>
+</dict>
+</plist>
