@@ -4,7 +4,6 @@
 REPONAME="BoomerangTemplates"
 BOOMERANGDIRNAME="Boomerang"
 TEMPLATEDIRECTORY="$HOME/Library/Developer/Xcode/Templates/File Templates/"
-TEMPLATEDIRCREATE = "$HOME/Library/Developer/Xcode/Templates/"
 
 function installTemplates {
 	rm -rf "$TEMPLATEDIRECTORY$BOOMERANGDIRNAME"
