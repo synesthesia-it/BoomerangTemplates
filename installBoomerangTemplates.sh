@@ -5,7 +5,7 @@ REPONAME="BoomerangTemplates"
 BOOMERANGDIRNAME="Boomerang"
 TEMPLATEDIRECTORY="$HOME/Library/Developer/Xcode/Templates/File Templates/"
 
-function install {
+function installTemplates {
 	rm -rf "$TEMPLATEDIRECTORY$BOOMERANGDIRNAME"
 
 	cd $REPONAME
@@ -15,4 +15,6 @@ function install {
 	echo "Boomerang templates installed"
 }
 
-git clone https://github.com/synesthesia-it/BoomerangTemplates.git && install
+cd /tmp/
+rm -rf BoomerangTemplates
+git clone https://github.com/synesthesia-it/BoomerangTemplates.git && installTemplates
