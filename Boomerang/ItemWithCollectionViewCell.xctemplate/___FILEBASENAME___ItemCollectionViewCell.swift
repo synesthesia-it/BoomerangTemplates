@@ -20,7 +20,7 @@ class ___FILEBASENAMEASIDENTIFIER___ItemCollectionViewCell: UICollectionViewCell
         super.awakeFromNib()
         // Initialization code
     }
-    func bind(_ viewModel: ViewModelType?) {
+    func bindTo(viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? ___FILEBASENAMEASIDENTIFIER___ItemViewModel else {
             return
         }
