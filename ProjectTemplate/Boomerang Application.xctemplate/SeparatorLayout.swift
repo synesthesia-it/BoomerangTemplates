@@ -12,7 +12,7 @@ enum SeparatorPosition {
     case Bottom
 }
 class SeparatorAttributes : UICollectionViewLayoutAttributes {
-    var backgroundColor:UIColor! = Color.manatee
+    var backgroundColor:UIColor! = UIColor.gray
 }
 class SeparatorView : UICollectionReusableView {
     override init(frame: CGRect) {
@@ -91,10 +91,9 @@ class SeparatorLayout : UICollectionViewFlowLayout {
             }).map({[weak self] (attribute:UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes in
                 let separator = SeparatorAttributes(forDecorationViewOfKind: "SeparatorView", with: attribute.indexPath)
                 var frame = CGRect()
-                let x:CGFloat = 0 //attribute.frame.origin.x +  (self?.sidePadding ?? 0)
-                let w = attribute.frame.size.width //-  2 * (self?.sidePadding ?? 0)
+                let x:CGFloat = 0
+                let w = attribute.frame.size.width
                 let h = self?.height ?? 1
-//                let separatorImage:UIImage? = UIImage.init(named: "news_separator_shadow")
                 if (self?.separatorPosition == .Bottom) {
                     frame = CGRect(x:x, y:attribute.frame.origin.y + attribute.frame.size.height-1 + (self?.minimumLineSpacing ?? 0)/2.0 ,width: w, height: h)
                 }
@@ -104,9 +103,8 @@ class SeparatorLayout : UICollectionViewFlowLayout {
                 separator.frame = frame
                 separator.zIndex = 100
                 separator.backgroundColor = self?.separatorColor
-//                separator.
                 return separator
-                })
+            })
         
         attributes!.append(contentsOf: newAttributes)
 

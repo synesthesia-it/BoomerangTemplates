@@ -8,7 +8,7 @@
 		<string>Model.swift</string>
 		<string>Operators.swift</string>
 		<string>SeparatorLayout.swift</string>
-		<string>ViewController.swift</string>
+		<string>ViewControllerCommons.swift</string>
 		<string>Router+Preview.swift</string>
 		<string>ViewModelFactory.swift</string>
 		<string>ViewFactory.swift</string>
@@ -73,7 +73,7 @@
 			<key>Group</key>
 			<string>Factory</string>
 			<key>Path</key>
-			<string>ViewFactoryswift</string>
+			<string>ViewFactory.swift</string>
 			<key>SortOrder</key>
 			<integer>21</integer>
 		</dict>
@@ -104,12 +104,12 @@
 			<key>SortOrder</key>
 			<integer>31</integer>
 		</dict>
-		<key>ViewController.swift</key>
+		<key>ViewControllerCommons.swift</key>
 		<dict>
 			<key>SortOrder</key>
 			<string>100</string>
 			<key>Path</key>
-			<string>ViewController.swift</string>
+			<string>ViewControllerCommons.swift</string>
 			<key>Group</key>
 			<string>ViewControllers</string>
 		</dict>

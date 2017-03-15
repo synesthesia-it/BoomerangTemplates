@@ -55,7 +55,7 @@ enum Decoration : String, ListIdentifier {
         case .shelf:
             return 262.0
         default:
-         return 54.0
+            return 54.0
         }
         
     }
@@ -93,23 +93,23 @@ enum Cell : String, ListIdentifier {
     case note = "NoteTableViewCell"
     static func all() -> [Cell] {
         return [
-           .news,
-           .newsHeader,
-           .newsBody,
-           .folder,
-           .resource,
-           .line,
-           .paragraphTitle,
-           .onlyText,
-           .organolepticNotes,
-           .imageGallery,
-           .productInfo,
-           .home,
-           .informations,
-           .greatVintages,
-           .target,
-           .shelfProduct,
-           
+            .news,
+            .newsHeader,
+            .newsBody,
+            .folder,
+            .resource,
+            .line,
+            .paragraphTitle,
+            .onlyText,
+            .organolepticNotes,
+            .imageGallery,
+            .productInfo,
+            .home,
+            .informations,
+            .greatVintages,
+            .target,
+            .shelfProduct,
+            
             
         ]
     }
@@ -140,4 +140,3 @@ extension Cell {
         return UINib(nibName: self.rawValue, bundle: nil).instantiate(withOwner: nil, options: nil).first as! T
     }
 }
-
