@@ -14,7 +14,7 @@ final class ___FILEBASENAMEASIDENTIFIER___ItemViewModel : ItemViewModelType {
     var model:ItemViewModelType.Model
     var itemIdentifier:ListIdentifier
     
-    init(model:ModelType) {
+    init(model: ___FILEBASENAMEASIDENTIFIER___) {
         self.model = model
     }
 }

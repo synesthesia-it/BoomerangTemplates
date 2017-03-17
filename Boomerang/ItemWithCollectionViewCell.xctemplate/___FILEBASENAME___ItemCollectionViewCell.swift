@@ -12,7 +12,7 @@ import RxSwift
 import Action
 import RxCocoa
 
-class ___FILEBASENAMEASIDENTIFIER___ItemCollectionViewCell: UICollectionViewCell {
+class ___FILEBASENAMEASIDENTIFIER___ItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
     
     var viewModel:ItemViewModelType?
     var disposeBag = DisposeBag()
