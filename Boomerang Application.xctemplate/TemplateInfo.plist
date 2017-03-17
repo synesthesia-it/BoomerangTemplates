@@ -113,7 +113,7 @@ end
 	<key>Nodes</key>
 	<array>
 		<string>Base.lproj/Main.storyboard</string>
-		<string>Images+Themes.swift</string>
+		<string>Image+Themes.swift</string>
 		<string>Utilities.swift</string>
 		<string>Model.swift</string>
 		<string>Operators.swift</string>
@@ -144,10 +144,10 @@ end
 	<integer>1</integer>
 	<key>Definitions</key>
 	<dict>
-		<key>Images+Themes.swift</key>
+		<key>Image+Themes.swift</key>
 		<dict>
 			<key>Path</key>
-			<string>Images+Themes</string>
+			<string>Image+Themes</string>
 			<key>Group</key>
 			<string>Utilities</string>
 		</dict>
