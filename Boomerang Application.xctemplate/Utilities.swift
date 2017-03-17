@@ -1,9 +1,6 @@
 //
 //  Utilities.swift
-//  iMasi
 //
-//  Created by Fabio Dono on 09/02/17.
-//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
@@ -32,7 +29,7 @@ extension Observable where Element: OptionalType {
 private struct AssociatedKeys {
     static var disposeBag = "disposeBag"
 }
-extension UICollectionViewCell {
+extension UIView {
 
     public var disposeBag: DisposeBag {
         get {

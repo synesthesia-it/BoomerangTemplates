@@ -28,28 +28,13 @@ class SeparatorView : UICollectionReusableView {
         super.apply(layoutAttributes)
         self.backgroundColor = (layoutAttributes as? SeparatorAttributes)?.backgroundColor ?? .white
     }
-//    override func drawRect(rect: CGRect) {
-//        
-//        let c1 =  UIColor.lightGrayColor().colorWithAlphaComponent(0.0)
-//        let c2 = UIColor.lightGrayColor().colorWithAlphaComponent(0.35)
-//        let context = UIGraphicsGetCurrentContext()
-//        CGContextClearRect(context,rect)
-//        let colors = [c1.CGColor,c2.CGColor,c1.CGColor]
-//        let locations:[CGFloat] = [0.1,0.5,0.9]
-//        let colorSpace = CGColorSpaceCreateDeviceRGB()
-//        let gradient = CGGradientCreateWithColors(colorSpace, colors, locations)
-//        let w = CGRectGetWidth(rect)
-//        CGContextDrawLinearGradient(context, gradient, CGPointMake(0, 0), CGPointMake(w, 0), [])
-//        self.backgroundColor = UIColor.clearColor()
-//        self.layer.backgroundColor = UIColor.clearColor().CGColor
-//    }
 }
 
 class SeparatorLayout : UICollectionViewFlowLayout {
-    var nibName:String?
+    var nibName:String = "DecorationView"
     var separatorPosition:SeparatorPosition! = .Bottom
     var separatorIndexPaths:[NSIndexPath]?
-    var separatorColor : UIColor! = .red//.manatee
+    var separatorColor : UIColor! = .red
     var height : CGFloat = 15
     var sidePadding : CGFloat = 15
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
@@ -67,7 +52,8 @@ class SeparatorLayout : UICollectionViewFlowLayout {
         self.commonInit()
     }
     func commonInit() {
-        self.register(UINib(nibName:"NewsDecorationView", bundle: nil ), forDecorationViewOfKind: "SeparatorView")
+        let name = self.nibName
+        self.register(UINib(nibName:name, bundle: nil ), forDecorationViewOfKind: name)
        // self.register(SeparatorView.self, forDecorationViewOfKind: "SeparatorView")
     }
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -89,7 +75,7 @@ class SeparatorLayout : UICollectionViewFlowLayout {
                 return contained
             }
             }).map({[weak self] (attribute:UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes in
-                let separator = SeparatorAttributes(forDecorationViewOfKind: "SeparatorView", with: attribute.indexPath)
+                let separator = SeparatorAttributes(forDecorationViewOfKind: self?.name ?? "", with: attribute.indexPath)
                 var frame = CGRect()
                 let x:CGFloat = 0
                 let w = attribute.frame.size.width

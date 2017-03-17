@@ -1,6 +1,5 @@
 //
 //  ViewController.swift
-//  ZiaMaria
 //
 //  Created by Stefano Mondino on 24/11/16.
 //  Copyright © 2016 Synesthesia. All rights reserved.
@@ -18,11 +17,6 @@ import SpinKit
 import Localize_Swift
 import AVKit
 
-//extension String{
-//    func localized() -> String {
-//        return NSLocalizedString(self, comment: "")
-//    }
-//}
 
 enum SharedSelectionOutput : SelectionOutput {
     case exit
@@ -32,49 +26,15 @@ enum SharedSelectionOutput : SelectionOutput {
     case preview(URL?)
     case playVideo(URL?)
     case confirm(title:String,message:String,confirmTitle:String,action:((Void)->()))
-//    case presentImage(photos:[IDMPhotoProtocol], fromView:UIImageView,fromIndex:Int)
-    //    case gallery(photos:[IDMPhotoProtocol],view:UIView, index:UInt, image:UIImage?)
-}
-
-enum TabBarItemType {
-    case masiWorld
-    case wines
-    case cantina
-    case company
-    case resources
-    
-    var title:String? {
-        switch self {
-        case .masiWorld : return  "Masi World".localized()
-        case .wines: return "Wines".localized()
-        case .cantina: return "Cantina Boscaini".localized()
-        case .company: return "Company".localized()
-        case .resources: return "Resources".localized()
-        }
-    }
-    var icon:UIImage? {
-        return UIImage(named:self.iconName)
-    }
-    private var iconName:String {
-        switch self {
-        case .masiWorld : return  "icon_masiWorld"
-        case .wines: return "icon_products"
-        case .cantina: return "icon_boscaini"
-        case .company: return "icon_company"
-        case .resources: return "icon_resources"
-        }
-    }
 }
 
 class NavigationController : UINavigationController, UINavigationBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        let heightBar = UIApplication.shared.statusBarFrame.height + self.navigationBar.frame.size.height
-        //        self.navigationBar.setBackgroundImage(UIImage.rectangle(ofSize:  CGSize(width:self.navigationBar.frame.size.width, height:heightBar) , color: UIColor.silver), for: .default)
-//        self.navigationBar.setBackgroundImage(UIImage.navbar(), for: .default)
-//        self.navigationBar.tintColor = UIColor.white
-//        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont.helveticaRegular(ofSize: 0) ]
+        //        self.navigationBar.setBackgroundImage(UIImage.navbar(), for: .default)
+        //        self.navigationBar.tintColor = UIColor.white
+        //        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont.helveticaRegular(ofSize: 0) ]
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -111,7 +71,7 @@ protocol KeyboardResizable  {
 }
 
 extension KeyboardResizable where Self : UIViewController {
-    //    var keyboardResize: Observable<CGFloat> {return .just(0)}
+    
     var keyboardResize: Observable<CGFloat>  {
         self.scrollView.keyboardDismissMode = .onDrag
         let original:CGFloat = self.bottomConstraint.constant
@@ -167,27 +127,22 @@ extension Collectionable where Self : UIViewController {
     }
 }
 
-//protocol Sharer {
-//    func shareItem() -> Sharable?
-//}
-
-
 
 extension UIViewController {
     
     private struct AssociatedKeys {
         static var loaderCount = "loaderCount"
-        static var DisposeBag = "vc_disposeBag"
+        static var disposeBag = "vc_disposeBag"
     }
-   
+    
     public var disposeBag: DisposeBag {
         var disposeBag: DisposeBag
         
-        if let lookup = objc_getAssociatedObject(self, &AssociatedKeys.DisposeBag) as? DisposeBag {
+        if let lookup = objc_getAssociatedObject(self, &AssociatedKeys.disposeBag) as? DisposeBag {
             disposeBag = lookup
         } else {
             disposeBag = DisposeBag()
-            objc_setAssociatedObject(self, &AssociatedKeys.DisposeBag, disposeBag, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.disposeBag, disposeBag, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         
         return disposeBag
@@ -197,12 +152,12 @@ extension UIViewController {
     func setup() -> UIViewController {
         let closure = {
             
-            //        var test = self.view.subviews.filter{$0 is UICollectionView}
+            
             (self as? Collectionable)?.setupCollectionView()
             
-            //        if ((self.navigationController?.viewControllers.count ?? 0) > 1) {
-            //            _ = self.withBackButton()
-            //        }
+            if ((self.navigationController?.viewControllers.count ?? 0) > 1) {
+                _ = self.withBackButton()
+            }
             
         }
         self.automaticallyAdjustsScrollViewInsets = false
@@ -225,7 +180,7 @@ extension UIViewController {
         self.navigationItem.leftBarButtonItem = item
         return self
     }
-
+    
     
     private var loaderCount:Int {
         
@@ -292,21 +247,11 @@ extension UIViewController {
             Router.confirm(title: title, message: message, confirmationTitle: confirmTitle, from: self, action: action).execute()
             
         case .playVideo(let url):
-            //            Router.playVideo(url, from: self).execute()
+            Router.playVideo(url, from: self).execute()
             break
         default: break
-//        case .presentImage(let photos, let fromView, let fromIndex):
-//            if let browser = IDMPhotoBrowser(photos: photos, animatedFrom: fromView) {
-//                
-//                browser.scaleImage = fromView.image
-//                browser.displayActionButton = false;
-//                browser.displayArrowButton = false;
-//                browser.displayCounterLabel = false;
-//                browser.displayDoneButton = true;
-//                browser.usePopAnimation = true;
-//                browser.setInitialPageIndex(UInt(fromIndex))
-//                self.present(browser, animated: true, completion: nil)
-//            }
+
+
         }
         
     }

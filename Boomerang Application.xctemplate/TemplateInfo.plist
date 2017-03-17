@@ -112,12 +112,15 @@ end
 	</array>
 	<key>Nodes</key>
 	<array>
+		<string>Base.lproj/Main.storyboard</string>
+		<string>Images+Themes.swift</string>
 		<string>Utilities.swift</string>
 		<string>Model.swift</string>
 		<string>Operators.swift</string>
 		<string>SeparatorLayout.swift</string>
 		<string>ViewControllerCommons.swift</string>
 		<string>Router+Preview.swift</string>
+		<string>Router+Safari.swift</string>
 		<string>ViewModelFactory.swift</string>
 		<string>ViewFactory.swift</string>
 		<string>Router.swift</string>
@@ -141,6 +144,20 @@ end
 	<integer>1</integer>
 	<key>Definitions</key>
 	<dict>
+		<key>Images+Themes.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Images+Themes</string>
+			<key>Group</key>
+			<string>Utilities</string>
+		</dict>
+		<key>AppDelegate.swift</key>
+		<dict>
+			<key>SortOrder</key>
+			<integer>1</integer>
+			<key>Path</key>
+			<string>AppDelegate.swift</string>
+		</dict>
 		<key>Operators.swift</key>
 		<dict>
 			<key>Group</key>
@@ -210,6 +227,15 @@ end
 			<string>Router+Preview.swift</string>
 			<key>SortOrder</key>
 			<integer>31</integer>
+		</dict>
+		<key>Router+Safari.swift</key>
+		<dict>
+			<key>Group</key>
+			<string>Router</string>
+			<key>Path</key>
+			<string>Router+Safari.swift</string>
+			<key>SortOrder</key>
+			<integer>32</integer>
 		</dict>
 		<key>ViewControllerCommons.swift</key>
 		<dict>

@@ -11,28 +11,12 @@ import Boomerang
 
 enum Storyboard : String {
     case main = "Main"
-    
     func scene<Type:UIViewController>(_ identifier:SceneIdentifier) -> Type {
         return UIStoryboard(name: self.rawValue, bundle: nil).instantiateViewController(withIdentifier: identifier.rawValue).setup() as! Type
     }
 }
 enum SceneIdentifier : String, ListIdentifier {
-    case news = "newsList"
-    case newsDetail = "newsDetail"
-    case folders = "folders"
-    case resources = "resources"
-    case shelf = "shelf"
-    case productDetail = "productDetail"
-    case productPager = "productPager"
-    case gallery = "gallery"
-    case cantina = "cantinaPrivata"
-    case image = "image"
-    case home = "home"
-    case pdf = "pdf"
-    case web = "web"
-    case notes = "notes"
-    case note = "note"
-    case noteList = "noteList"
+    case test = "test"
     var name: String {
         return self.rawValue
     }
@@ -41,23 +25,6 @@ enum SceneIdentifier : String, ListIdentifier {
 extension ListViewModelType {
     var listIdentifiers:[ListIdentifier] {
         return Cell.all()
-    }
-}
-enum Decoration : String, ListIdentifier {
-    case resources = "ResourcesDecorationView"
-    case shelf = "ShelfDecorationView"
-    case none = ""
-    var name: String {return self.rawValue}
-    var type: String?  {return nil}
-    var height:CGFloat {
-        switch self {
-        case .none : return 0
-        case .shelf:
-            return 262.0
-        default:
-            return 54.0
-        }
-        
     }
 }
 
@@ -73,44 +40,11 @@ enum ActionViewIdentifier : String, ListIdentifier {
     var name: String { return self.rawValue }
 }
 
-enum Cell : String, ListIdentifier {
-    case news = "NewsItemCollectionViewCell"
-    case newsHeader = "NewsHeaderItemView"
-    case newsBody = "NewsBodyItemView"
-    case folder = "FolderItemCollectionViewCell"
-    case resource = "ResourceItemCollectionViewCell"
-    case shelfProduct = "ShelfProductItemCollectionViewCell"
-    case line = "LineItemCollectionViewCell"
-    case paragraphTitle = "ParagraphTitleCollectionViewCell"
-    case onlyText = "OnlyTextCollectionViewCell"
-    case organolepticNotes = "OrganolepticNotesItemCollectionViewCell"
-    case imageGallery = "ImageGalleryItemCollectionViewCell"
-    case productInfo = "ProductInfoItemCollectionViewCell"
-    case home = "HomeItemCollectionViewCell"
-    case informations = "InformationsItemCollectionViewCell"
-    case greatVintages = "GreatVintagesItemCollectionViewCell"
-    case target = "TargetItemCollectionViewCell"
-    case note = "NoteTableViewCell"
+enum CollectionViewCell : String, ListIdentifier {
+    case test = "TestItemCollectionViewCell"
     static func all() -> [Cell] {
         return [
-            .news,
-            .newsHeader,
-            .newsBody,
-            .folder,
-            .resource,
-            .line,
-            .paragraphTitle,
-            .onlyText,
-            .organolepticNotes,
-            .imageGallery,
-            .productInfo,
-            .home,
-            .informations,
-            .greatVintages,
-            .target,
-            .shelfProduct,
-            
-            
+            .test
         ]
     }
     static func headers() -> [Cell] {
@@ -127,16 +61,4 @@ enum Cell : String, ListIdentifier {
     }
 }
 
-enum View: String {
-    case filtersView = "FiltersView"
-    var loadView:UIView?  {
-        return Bundle.main.loadNibNamed(self.rawValue, owner: nil, options: nil)?.first as? UIView
-    }
-    
-}
 
-extension Cell {
-    func cell<T:UICollectionViewCell>() -> T {
-        return UINib(nibName: self.rawValue, bundle: nil).instantiate(withOwner: nil, options: nil).first as! T
-    }
-}
