@@ -2,14 +2,14 @@
 #
 #
 REPONAME="BoomerangTemplates"
-BOOMERANGDIRNAME="Boomerang"
+BOOMERANGDIRNAME="Boomerang Application.xctemplate"
 TEMPLATEDIRECTORY="$HOME/Library/Developer/Xcode/Templates/Project Templates/"
 
 function installTemplates {
 	rm -rf "$TEMPLATEDIRECTORY$BOOMERANGDIRNAME"
 
 	cd $REPONAME
-	cp -r "Boomerang Application.xctemplate" "$TEMPLATEDIRECTORY"
+	cp -r "$BOOMERANGDIRNAME" "$TEMPLATEDIRECTORY"
 	cd ..
 	rm -rf $REPONAME
 	echo "Boomerang templates installed"
