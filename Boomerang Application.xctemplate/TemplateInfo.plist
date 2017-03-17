@@ -129,7 +129,7 @@ end
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Identifier</key>
-	<string>it.synesthesia.boomerang.template</string>
+	<string>com.apple.dt.unit.singleViewApplication</string>
 	<key>Ancestors</key>
 	<array>
 		<string>com.apple.dt.unit.storyboardApplication</string>
