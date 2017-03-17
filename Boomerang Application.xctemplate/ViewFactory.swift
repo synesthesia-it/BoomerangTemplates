@@ -1,11 +1,3 @@
-//
-//  ViewFactory.swift
-//  EPTA
-//
-//  Created by Stefano Mondino on 14/12/16.
-//  Copyright © 2016 EPTA. All rights reserved.
-//
-
 import UIKit
 import Boomerang
 
@@ -24,37 +16,23 @@ enum SceneIdentifier : String, ListIdentifier {
 }
 extension ListViewModelType {
     var listIdentifiers:[ListIdentifier] {
-        return Cell.all()
+        return CollectionViewCell.all()
     }
-}
-
-enum ActionViewIdentifier : String, ListIdentifier {
-    case login = "InsertEmailView"
-    case checkUpdates = "CheckUpdateView"
-    case askForLogin = "AskForLoginView"
-    case appUpdated = "AppIsUpdateView"
-    case downloadsAvailable = "DownloadsAvailableView"
-    case downloading = "DownloadInProgressView"
-    
-    var type: String? {return nil}
-    var name: String { return self.rawValue }
 }
 
 enum CollectionViewCell : String, ListIdentifier {
     case test = "TestItemCollectionViewCell"
-    static func all() -> [Cell] {
+    static func all() -> [CollectionViewCell] {
         return [
             .test
         ]
     }
-    static func headers() -> [Cell] {
+    static func headers() -> [CollectionViewCell] {
         return self.all().filter{ $0.type == UICollectionElementKindSectionHeader}
     }
     var name: String {return self.rawValue}
     var type: String? {
         switch self {
-        case .paragraphTitle:
-            return UICollectionElementKindSectionHeader
         default: return nil
             
         }

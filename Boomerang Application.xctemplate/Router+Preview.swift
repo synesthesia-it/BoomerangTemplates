@@ -1,11 +1,3 @@
-//
-//  Router+QuickLook.swift
-//  EPTA
-//
-//  Created by Stefano Mondino on 04/02/17.
-//  Copyright © 2017 EPTA. All rights reserved.
-//
-
 import QuickLook
 import Boomerang
 extension QLPreviewController {

@@ -1,8 +1,3 @@
-//
-//  Utilities.swift
-//
-//
-
 import Foundation
 import RxSwift
 import Boomerang

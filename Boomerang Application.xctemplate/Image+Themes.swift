@@ -1,11 +1,3 @@
-//
-//  Image.swift
-//  EPTA
-//
-//  Created by Stefano Mondino on 14/12/16.
-//  Copyright © 2016 EPTA. All rights reserved.
-//
-
 import UIKit
 
 extension UIImage {

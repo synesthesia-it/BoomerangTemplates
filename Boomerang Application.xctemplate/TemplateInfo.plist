@@ -112,7 +112,6 @@ end
 	</array>
 	<key>Nodes</key>
 	<array>
-		<string>Base.lproj/Main.storyboard</string>
 		<string>Image+Themes.swift</string>
 		<string>Utilities.swift</string>
 		<string>Model.swift</string>
@@ -245,13 +244,6 @@ end
 			<string>ViewControllerCommons.swift</string>
 			<key>Group</key>
 			<string>ViewControllers</string>
-		</dict>
-		<key>Base.lproj/Main.storyboard</key>
-		<dict>
-			<key>Path</key>
-			<string>Main.storyboard</string>
-			<key>SortOrder</key>
-			<integer>99</integer>
 		</dict>
 	</dict>
 </dict>

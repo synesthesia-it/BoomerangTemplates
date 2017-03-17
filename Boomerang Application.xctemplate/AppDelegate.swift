@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//
-//  Created by Stefano Mondino on 17/03/17.
-//  Copyright © 2017 Synesthesia. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

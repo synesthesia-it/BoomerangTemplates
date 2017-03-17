@@ -1,10 +1,3 @@
-//
-//  SeparatorLayout.swift
-//  Confartigianato
-//
-//  Created by Stefano Mondino on 12/06/16.
-//  Copyright © 2016 Synesthesia. All rights reserved.
-//
 import UIKit
 
 enum SeparatorPosition {
@@ -75,7 +68,7 @@ class SeparatorLayout : UICollectionViewFlowLayout {
                 return contained
             }
             }).map({[weak self] (attribute:UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes in
-                let separator = SeparatorAttributes(forDecorationViewOfKind: self?.name ?? "", with: attribute.indexPath)
+                let separator = SeparatorAttributes(forDecorationViewOfKind: self?.nibName ?? "", with: attribute.indexPath)
                 var frame = CGRect()
                 let x:CGFloat = 0
                 let w = attribute.frame.size.width

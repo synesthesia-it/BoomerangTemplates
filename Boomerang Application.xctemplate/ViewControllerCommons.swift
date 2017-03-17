@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//
-//  Created by Stefano Mondino on 24/11/16.
-//  Copyright © 2016 Synesthesia. All rights reserved.
-//
-
 import Foundation
 import RxCocoa
 import RxSwift
