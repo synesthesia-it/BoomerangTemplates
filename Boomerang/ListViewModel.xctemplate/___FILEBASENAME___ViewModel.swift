@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import Boomerang
+import Action
 
 enum ___FILEBASENAMEASIDENTIFIER___SelectionInput : SelectionInput {
     case item(IndexPath)
@@ -27,7 +28,7 @@ final class ___FILEBASENAMEASIDENTIFIER___ViewModel : ListViewModelType, ViewMod
         return ViewModelFactory.__proper_factory_method_here()
     }
     
-    lazy var selection = Action<___FILEBASENAMEASIDENTIFIER___SelectionInput,___FILEBASENAMEASIDENTIFIER___SelectionOutput> { input in
+    lazy var selection : Action<___FILEBASENAMEASIDENTIFIER___SelectionInput,___FILEBASENAMEASIDENTIFIER___SelectionOutput> = Action { input in
         switch input {
         case .item(let indexPath):
             guard let model = (self.model(atIndex:indexPath) as? ___FILEBASENAMEASIDENTIFIER___) else {
