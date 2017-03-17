@@ -147,7 +147,7 @@ end
 		<key>Image+Themes.swift</key>
 		<dict>
 			<key>Path</key>
-			<string>Image+Themes</string>
+			<string>Image+Themes.swift</string>
 			<key>Group</key>
 			<string>Utilities</string>
 		</dict>
