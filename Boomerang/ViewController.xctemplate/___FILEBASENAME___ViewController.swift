@@ -15,7 +15,7 @@ import Boomerang
 class ___FILEBASENAMEASIDENTIFIER___ViewController : UIViewController, ViewModelBindable, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel: ViewModelType?
+    var viewModel: ___FILEBASENAMEASIDENTIFIER___ViewModel?
     var flow:UICollectionViewFlowLayout? {
         return self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
     }
