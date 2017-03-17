@@ -40,7 +40,7 @@ def shared_pods
     pod &apos;SnapKit&apos;, &apos;~&gt; 3.0.2&apos;
     pod &apos;ActiveLabel&apos;
     pod &apos;Localize-Swift&apos;
-    pod &apos;DateToolsSwift’
+    pod &apos;DateToolsSwift&apos;
     pod &apos;Action&apos;, :git =&gt; &quot;https://github.com/RxSwiftCommunity/Action.git&quot;
     pod &apos;MZFormSheetPresentationController&apos;
     pod &apos;Moya&apos;
