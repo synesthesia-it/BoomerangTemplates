@@ -9,7 +9,7 @@ function installTemplates {
 	rm -rf "$TEMPLATEDIRECTORY$BOOMERANGDIRNAME"
 
 	cd $REPONAME
-	cp -r "ProjectTemplate/*" "$TEMPLATEDIRECTORY"
+	cp -r "Boomerang Application.xctemplate" "$TEMPLATEDIRECTORY"
 	cd ..
 	rm -rf $REPONAME
 	echo "Boomerang templates installed"
