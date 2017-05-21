@@ -24,7 +24,7 @@ class ___FILEBASENAMEASIDENTIFIER___sViewController : UIViewController, ViewMode
         
     }
     
-    func bindTo(viewModel: ViewModelType?) {
+    func bind(to viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? ___FILEBASENAMEASIDENTIFIER___sViewModel else {
             return
         }

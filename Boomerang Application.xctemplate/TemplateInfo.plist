@@ -30,18 +30,18 @@
 def shared_pods
     use_frameworks!
     pod &apos;RxSwift&apos;
-    pod &apos;Boomerang&apos;, :git =&gt; &quot;https://github.com/synesthesia-it/Boomerang.git&quot;
+    pod &apos;Boomerang&apos;, :git =&gt; &quot;https://github.com/synesthesia-it/Boomerang.git&quot;, :branch =&gt; &quot;v1&quot;
     pod &apos;pop&apos;
     pod &apos;BonMot&apos;
     pod &apos;MBProgressHUD&apos;
     pod &apos;SpinKit&apos;
     pod &apos;Fabric&apos;
     pod &apos;Crashlytics&apos;
-    pod &apos;SnapKit&apos;, &apos;~&gt; 3.0.2&apos;
+    pod &apos;SnapKit&apos;
     pod &apos;ActiveLabel&apos;
     pod &apos;Localize-Swift&apos;
     pod &apos;DateToolsSwift&apos;
-    pod &apos;Action&apos;, :git =&gt; &quot;https://github.com/RxSwiftCommunity/Action.git&quot;
+    pod &apos;Action&apos;
     pod &apos;MZFormSheetPresentationController&apos;
     pod &apos;Moya&apos;
     pod &apos;AlamofireImage&apos;
@@ -130,7 +130,7 @@ end
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Identifier</key>
-	<string>com.apple.dt.unit.singleViewApplication</string>
+	<string>com.apple.dt.unit.singleViewApplication.boomerang</string>
 	<key>Ancestors</key>
 	<array>
 		<string>com.apple.dt.unit.coreDataCocoaTouchApplication</string>
