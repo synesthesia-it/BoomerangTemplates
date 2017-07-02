@@ -13,7 +13,7 @@ internal extension UIViewController {
 
  extension ViewModelBindable where Self : UIViewController {
     func withViewModel(_ viewModel:ViewModelType) -> Self {
-        self.bindTo(viewModel:viewModel, afterLoad: true)
+        self.bind(to:viewModel, afterLoad: true)
         return self
     }
 }

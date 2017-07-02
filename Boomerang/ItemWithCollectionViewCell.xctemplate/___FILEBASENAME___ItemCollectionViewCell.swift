@@ -1,9 +1,9 @@
 //
-//  CollectionViewCell.swift
-//  
+//  ___FILENAME___
+//  ___PROJECTNAME___
 //
-//  Created by Stefano Mondino on 07/03/17.
-//
+//  Created by ___FULLUSERNAME___ on ___DATE___.
+//___COPYRIGHT___
 //
 
 import UIKit
