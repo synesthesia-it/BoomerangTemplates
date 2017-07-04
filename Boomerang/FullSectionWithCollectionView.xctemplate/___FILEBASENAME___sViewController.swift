@@ -30,7 +30,7 @@ class ___FILEBASENAMEASIDENTIFIER___sViewController : UIViewController, ViewMode
         }
         
         self.viewModel = viewModel
-        self.collectionView.bindTo(viewModel:viewModel)
+        self.collectionView.bind(to:viewModel)
         self.collectionView.delegate = self
         viewModel.selection.elements.subscribe(onNext:{ selection in
             switch selection {
