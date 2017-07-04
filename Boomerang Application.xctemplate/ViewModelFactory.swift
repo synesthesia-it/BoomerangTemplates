@@ -5,9 +5,6 @@ import Action
 import Boomerang
 
 
-
-typealias Selection = Action<SelectionInput,SelectionOutput>
-
 struct ViewModelFactory {
     
 }

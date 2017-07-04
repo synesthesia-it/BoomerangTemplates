@@ -40,7 +40,7 @@ func nonMarkedText(_ textInput: UITextInput) -> String? {
 
 func <-> <Base: UITextInput>(textInput: TextInput<Base>, variable: Variable<String>) -> Disposable {
     let bindToUIDisposable = variable.asObservable()
-        .bindTo(textInput.text)
+        .bind(to:textInput.text)
     let bindToVariable = textInput.text
         .subscribe(onNext: { [weak base = textInput.base] n in
             guard let base = base else {
@@ -82,7 +82,7 @@ func <-> <T>(property: ControlProperty<T>, variable: Variable<T>) -> Disposable 
     }
     
     let bindToUIDisposable = variable.asObservable()
-        .bindTo(property)
+        .bind(to:property)
     let bindToVariable = property
         .subscribe(onNext: { n in
             variable.value = n
@@ -94,3 +94,22 @@ func <-> <T>(property: ControlProperty<T>, variable: Variable<T>) -> Disposable 
 }
 
 // }
+
+public protocol OptionalType {
+    associatedtype Wrapped
+    
+    var optional: Wrapped? { get }
+}
+
+extension Optional: OptionalType {
+    public var optional: Wrapped? { return self }
+}
+
+// Unfortunately the extra type annotations are required, otherwise the compiler gives an incomprehensible error.
+extension Observable where Element: OptionalType {
+    func ignoreNil() -> Observable<Element.Wrapped> {
+        return flatMap { value in
+            value.optional.map { Observable<Element.Wrapped>.just($0) } ?? Observable<Element.Wrapped>.empty()
+        }
+    }
+}

@@ -1,0 +1,5 @@
+import Moya
+
+struct DataManager {
+    
+}

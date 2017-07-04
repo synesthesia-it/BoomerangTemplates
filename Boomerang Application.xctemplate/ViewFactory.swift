@@ -21,6 +21,7 @@ extension ListViewModelType {
 }
 
 enum CollectionViewCell : String, ListIdentifier {
+    
     case test = "TestItemCollectionViewCell"
     static func all() -> [CollectionViewCell] {
         return [
