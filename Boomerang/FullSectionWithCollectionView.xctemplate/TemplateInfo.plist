@@ -11,22 +11,35 @@
 		<key>___FILEBASENAME___sViewController</key>
 		<string>___FILEBASENAME___sViewController.swift</string>
 		<key>___FILEBASENAME___ItemCollectionViewCell.xib</key>
-		<string>___FILEBASENAME___ItemCollectionViewCell.xib</string>
+		<string>___FILEBASENAME___ItemView.xib</string>
 		<key>___FILEBASENAME___ItemCollectionViewCell.swift</key>
-		<string>___FILEBASENAME___ItemCollectionViewCell.swift</string>
+		<string>___FILEBASENAME___ItemView.swift</string>
 	</dict>
 	<key>Kind</key>
 	<string>Xcode.IDEFoundation.TextSubstitutionFileTemplateKind</string>
 	<key>Description</key>
 	<string>An empty Swift file.</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>productName</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Model:</string>
+			<key>Description</key>
+			<string>The name of the View and ViewModel to create</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>MyView</string>
+		</dict>
+	</array>
 	<key>Summary</key>
 	<string>An empty Swift file</string>
 	<key>SortOrder</key>
 	<string>30</string>
-	<key>AllowedTypes</key>
-	<array>
-		<string>public.swift-source</string>
-	</array>
 	<key>DefaultCompletionName</key>
 	<string>File</string>
 </dict>

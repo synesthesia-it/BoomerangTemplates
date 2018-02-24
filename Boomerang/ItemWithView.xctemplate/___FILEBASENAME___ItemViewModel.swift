@@ -10,11 +10,11 @@ import Foundation
 import RxSwift
 import Boomerang
 
-final class ___FILEBASENAMEASIDENTIFIER___ItemViewModel : ItemViewModelType {
+final class ___VARIABLE_productName:identifier___ItemViewModel : ItemViewModelType {
     var model:ItemViewModelType.Model
     var itemIdentifier:ListIdentifier
     
-    init(model: ___FILEBASENAMEASIDENTIFIER___) {
+    init(model: ___VARIABLE_productName:identifier___) {
         self.model = model
     }
 }

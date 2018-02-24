@@ -10,12 +10,25 @@
 	<string>An empty Swift file</string>
 	<key>SortOrder</key>
 	<string>30</string>
-	<key>AllowedTypes</key>
-	<array>
-		<string>public.swift-source</string>
-	</array>
 	<key>DefaultCompletionName</key>
 	<string>File</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>productName</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Model:</string>
+			<key>Description</key>
+			<string>The name of the View and ViewModel to create</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>MyView</string>
+		</dict>
+	</array>
 	<key>MainTemplateFile</key>
 	<string>___FILEBASENAME___ItemViewModel.swift</string>
 </dict>

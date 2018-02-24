@@ -12,10 +12,10 @@ import RxCocoa
 import Boomerang
 
 
-class ___FILEBASENAMEASIDENTIFIER___sViewController : UIViewController, ViewModelBindable, UICollectionViewDelegateFlowLayout {
+class ___VARIABLE_productName:identifier___sViewController : UIViewController, ViewModelBindable, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel: ___FILEBASENAMEASIDENTIFIER___sViewModel?
+    var viewModel:___VARIABLE_productName:identifier___sViewModel?
     var flow:UICollectionViewFlowLayout? {
         return self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
     }
@@ -25,7 +25,7 @@ class ___FILEBASENAMEASIDENTIFIER___sViewController : UIViewController, ViewMode
     }
     
     func bind(to viewModel: ViewModelType?) {
-        guard let viewModel = viewModel as? ___FILEBASENAMEASIDENTIFIER___sViewModel else {
+        guard let viewModel = viewModel as? ___VARIABLE_productName:identifier___sViewModel else {
             return
         }
         

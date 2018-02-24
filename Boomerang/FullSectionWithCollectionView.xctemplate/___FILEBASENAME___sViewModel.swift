@@ -11,30 +11,23 @@ import RxSwift
 import Boomerang
 import Action
 
-enum ___FILEBASENAMEASIDENTIFIER___SelectionInput : SelectionInput {
-    case item(IndexPath)
-}
-enum ___FILEBASENAMEASIDENTIFIER___SelectionOutput : SelectionOutput {
-    case viewModel(ViewModelType)
-}
-
-final class ___FILEBASENAMEASIDENTIFIER___sViewModel : ListViewModelType, ViewModelTypeSelectable {
+final class ___VARIABLE_productName:identifier___sViewModel : ListViewModelType {
     var dataHolder: ListDataHolderType = ListDataHolder()
     
     func itemViewModel(fromModel model: ModelType) -> ItemViewModelType? {
-        guard let item = model as? ___FILEBASENAMEASIDENTIFIER___ else {
+        guard let item = model as? ___VARIABLE_productName:identifier___ else {
             return nil
         }
-        return ViewModelFactory.__proper_factory_method_here()
+        return ViewModelFactory.___VARIABLE_productName:identifier___Item(model:model)
     }
     
-    lazy var selection:Action<___FILEBASENAMEASIDENTIFIER___SelectionInput,___FILEBASENAMEASIDENTIFIER___SelectionOutput> = Action { input in
+    lazy var selection : Selection = Selection { input in
         switch input {
         case .item(let indexPath):
-            guard let model = (self.model(atIndex:indexPath) as? ___FILEBASENAMEASIDENTIFIER___) else {
+            guard let model = (self.model(atIndex:indexPath) as? ___VARIABLE_productName:identifier___) else {
                 return .empty()
             }
-            let destinationViewModel = __proper_factory_method_here__
+            let destinationViewModel = ViewModelFactory.nextViewModel(model:model)
             return .just(.viewModel(destinationViewModel))
         }
     }
@@ -44,3 +37,4 @@ final class ___FILEBASENAMEASIDENTIFIER___sViewModel : ListViewModelType, ViewMo
         
     }
 }
+
