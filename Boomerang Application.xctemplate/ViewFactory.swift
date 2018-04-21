@@ -1,10 +1,10 @@
 import UIKit
 import Boomerang
 
-enum Storyboard : String {
+fileprivate enum Storyboard : String {
     case main = "Main"
-    func scene<Type:UIViewController>(_ identifier:SceneIdentifier) -> Type {
-        return UIStoryboard(name: self.rawValue, bundle: nil).instantiateViewController(withIdentifier: identifier.rawValue).setup() as! Type
+    func scene<Type:UIViewController>(_ identifier:SceneIdentifier) -> Type? {
+        return UIStoryboard(name: self.rawValue, bundle: nil).instantiateViewController(withIdentifier: identifier.rawValue) as? Type
     }
 }
 enum SceneIdentifier : String, ListIdentifier {
@@ -13,24 +13,34 @@ enum SceneIdentifier : String, ListIdentifier {
         return self.rawValue
     }
     var type: String? {return nil}
-}
-extension ListViewModelType {
-    var listIdentifiers:[ListIdentifier] {
-        return CollectionViewCell.all()
+    
+    var scene:(UIViewController & ViewModelBindableType)? {
+        return Storyboard.main.scene(self) as? (UIViewController & ViewModelBindableType)
     }
 }
 
-enum CollectionViewCell : String, ListIdentifier {
+protocol SceneViewModelType : ViewModelType {
+    var sceneIdentifier:SceneIdentifier { get }
+}
+
+extension ListViewModelType {
+    var listIdentifiers:[ListIdentifier] {
+        return View.all()
+    }
+}
+
+enum View : String, ListIdentifier {
     
     case test = "TestItemCollectionViewCell"
-    static func all() -> [CollectionViewCell] {
+    static func all() -> [View] {
         return [
             .test
         ]
     }
-    static func headers() -> [CollectionViewCell] {
+    static func headers() -> [View] {
         return self.all().filter{ $0.type == UICollectionElementKindSectionHeader}
     }
+    var isEmbeddable: Bool { return true }
     var name: String {return self.rawValue}
     var type: String? {
         switch self {

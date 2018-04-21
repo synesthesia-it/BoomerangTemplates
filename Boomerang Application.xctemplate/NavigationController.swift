@@ -20,12 +20,11 @@ class NavigationController : UINavigationController, UINavigationBarDelegate {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         switch UIDevice.current.userInterfaceIdiom {
-        case .pad : return .landscape
         default : return .portrait
         }
     }
     override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
+        return .default
         
     }
     override var shouldAutorotate: Bool{

@@ -16,13 +16,13 @@ extension SFSafariViewController {
 extension Router {
     public static func open<Source> (_ url:URL?, from source:Source) -> RouterAction
         where Source: UIViewController{
-            if (url == nil) {return EmptyRouterAction()}
-            if (!SFSafariViewController.canOpenURL(URL:url!)) {
+            guard let url = url else {return EmptyRouterAction()}
+            if (!SFSafariViewController.canOpenURL(URL:url)) {
                 return UIViewControllerRouterAction.custom(action: {
-                    UIApplication.shared.openURL(url!)
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 })
             }
-            let vc = SFSafariViewController(url: url!, entersReaderIfAvailable: true)
+            let vc = SFSafariViewController(url: url)
             return UIViewControllerRouterAction.modal(source: source, destination: vc, completion: nil)
     }
 

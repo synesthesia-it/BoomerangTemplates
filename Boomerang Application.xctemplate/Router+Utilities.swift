@@ -13,27 +13,6 @@ import AVKit
 import AVFoundation
 
 extension Router {
-    public static func openApp<Source> (_ url:URL?, from source:Source) -> RouterAction
-        where Source: UIViewController{
-            if (url == nil) {return EmptyRouterAction()}
-            
-            return UIViewControllerRouterAction.custom(action: {
-                UIApplication.shared.openURL(url!)
-            })
-            
-    }
-    public static func exit<Source>(_ source:Source) -> RouterAction where Source: UIViewController {
-        return UIViewControllerRouterAction.custom {
-            _ = source.navigationController?.popToRootViewController(animated: true)
-        }
-    }
-    
-    public static func dismiss<Source>(_ source:Source) -> RouterAction where Source: UIViewController {
-        return UIViewControllerRouterAction.custom {
-            _ = source.dismiss(animated: true, completion: nil)
-        }
-    }
-
     
     public static func playVideo<Source> (_ url:URL?, from source:Source) -> RouterAction
         where Source: UIViewController{

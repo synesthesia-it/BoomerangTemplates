@@ -19,24 +19,15 @@ struct ImageDownloader {
         return AlamofireImage.ImageDownloader()
     }()
     
-    static func download(from urlString: String?) -> Observable<UIImage?> {
-        guard let urlString = urlString, let url = URL(string: urlString) else {
-            return .just(nil)
-        }
-        return ImageDownloader.download(url)
-    }
-    
-    static func  download(_ url: URL) -> Observable<UIImage?> {
+    static func  download(_ url: URL) -> Observable<UIImage> {
         return Observable.create { observer in
             let urlRequest = URLRequest(url: url)
             let receipt = downloader.download(urlRequest) { response in
                 if let error =  response.result.error {
                     observer.onError(error)
                 }
-                if let image = response.result.value {
-                    observer.onNext(image)
+                    observer.onNext(response.result.value ?? UIImage())
                     observer.onCompleted()
-                }
             }
             return Disposables.create {
                 if receipt != nil {
@@ -48,15 +39,29 @@ struct ImageDownloader {
     
 }
 
-protocol ObservableImageType {
-    func get() -> Observable<UIImage?>
+protocol WithImage {
+    func getImage() -> Observable<UIImage>
 }
 
-typealias ObservableImage = Observable<UIImage?>
+typealias ObservableImage = Observable<UIImage>
 
-extension UIImage : ObservableImageType {
-    func get() -> ObservableImage {
+extension UIImage : WithImage {
+    func getImage() -> ObservableImage {
         return .just(self)
+    }
+}
+extension URL : WithImage {
+    func getImage() -> Observable<UIImage> {
+        return ImageDownloader.download(self).catchErrorJustReturn(UIImage())
+    }
+}
+extension String : WithImage {
+    func getImage() -> Observable<UIImage> {
+        if let url = URL(string: self) {
+            return url.getImage()
+        }
+        guard let img = UIImage(named: self) else { return .just(UIImage())}
+        return .just(img)
     }
 }
 
