@@ -29,8 +29,8 @@
 
 def shared_pods
     use_frameworks!
-    pod &apos;RxSwift&apos;
-    pod &apos;Boomerang&apos;, :git =&gt; &quot;https://github.com/synesthesia-it/Boomerang.git&quot;, :branch =&gt; &quot;v1&quot;
+    inhibit_all_warnings!
+    pod &apos;Boomerang&apos;, :git =&gt; &quot;https://github.com/synesthesia-it/Boomerang.git&quot;, :branch =&gt; &quot;master&quot;
     pod &apos;pop&apos;
     pod &apos;BonMot&apos;
     pod &apos;MBProgressHUD&apos;
@@ -40,7 +40,6 @@ def shared_pods
     pod &apos;SnapKit&apos;
     pod &apos;Localize-Swift&apos;
     pod &apos;DateToolsSwift&apos;
-    pod &apos;Action&apos;
     pod &apos;Moya/RxSwift&apos;
     pod &apos;AlamofireImage&apos;
     pod &apos;Gloss&apos;
@@ -50,7 +49,8 @@ target &apos;MyTest&apos; do
   # Comment the next line if you&apos;re not using Swift and don&apos;t want to use dynamic frameworks
   use_frameworks!
   shared_pods
-end</string>
+end
+</string>
 					</dict>
 					<key>Nodes</key>
 					<array>
