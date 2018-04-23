@@ -130,6 +130,7 @@ end
 		<string>ViewController+Selection.swift</string>
 		<string>ViewFactory.swift</string>
 		<string>ViewModelFactory.swift</string>
+		<string>Errors.swift</string>
 	</array>
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
@@ -282,6 +283,15 @@ end
 			<string>Utilities</string>
 			<key>Path</key>
 			<string>SeparatorLayout.swift</string>
+			<key>SortOrder</key>
+			<integer>32</integer>
+		</dict>
+		<key>Errors.swift</key>
+		<dict>
+			<key>Group</key>
+			<string>Utilities</string>
+			<key>Path</key>
+			<string>Errors.swift</string>
 			<key>SortOrder</key>
 			<integer>32</integer>
 		</dict>
