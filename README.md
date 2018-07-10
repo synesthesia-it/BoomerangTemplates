@@ -11,3 +11,7 @@ curl -fsSL https://raw.githubusercontent.com/synesthesia-it/BoomerangTemplates/m
 ```bash
 curl -fsSL https://raw.githubusercontent.com/synesthesia-it/BoomerangTemplates/master/installBoomerangProjectTemplate.sh | sh
 ```
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/synesthesia-it/BoomerangTemplates/master/installMurrayTemplate.sh | sh
+```
